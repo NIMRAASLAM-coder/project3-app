@@ -19,21 +19,21 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Build and push vote image
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v7
         with:
           context: ./vote
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/vote:${{ github.sha }}
 
       - name: Build and push result image
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v7
         with:
           context: ./result
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/result:${{ github.sha }}
 
       - name: Build and push worker image
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v7
         with:
           context: ./worker
           push: true
